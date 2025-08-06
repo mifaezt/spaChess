@@ -1,0 +1,190 @@
+/**
+  Нормализация блочной модели
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+/**
+  Упрощаем работу с изображениями
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Плавный скролл
+   */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+:root {
+  --color-dark: #000000;
+  --color-dark-brown: #1f1f1f;
+  --color-yellow: #fbce51;
+  --color-red: #f54932;
+  --color-dark-brown: #313131;
+  --color-light-brown: #e9ded4;
+  --color-blue: #3057a2;
+  --color-gray: #d6d6d6;
+
+  --border-radius: 30px;
+  --border: 1px solid var(--color-light);
+
+  --font-family-base: "Merriweather", sans-serif;
+  --font-family-accent: "Golos Text", sans-serif;
+
+  /* --input-height: 54px; */
+
+  /* --container-width: 1300px;
+  --container-padding-x: 15px; */
+
+  --transition-duration: 0.2s;
+
+  --header-height: 90px;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-light-gray);
+  background-color: var(--color-light-brown);
+}
+
+svg *[fill] {
+  fill: currentColor;
+}
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+svg * {
+  transition-property: fill, stroke;
+}
+
+/* a {
+  color: var(--color-light);
+}
+
+a:hover {
+  color: var(--color-light-gray);
+} */
+
+/* p {
+  margin-block: 0;
+}
+
+p:not([class]):not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.container-wide {
+  max-width: 1920px;
+  margin-inline: auto;
+} */
+
+header {
+  /* height: 700px; */
+}
+
+.image-container {
+  width: 100vw; /* На всю ширину экрана */
+  height: 60vh;
+  overflow: hidden; /* Обрезает всё, что выходит за границы */
+  position: absolute; /* Для позиционирования img */
+  top: 0;
+}
+
+.mainImage {
+  /* width: 100%; Растягивается по ширине контейнера */
+  height: 824px; /* Растягивается по высоте */
+  object-fit: cover; /* Заполняет контейнер с обрезкой */
+  position: absolute; /* Позволяет смещать изображение */
+  top: 50%; /* Центрирование */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Точное центрирование */
+}

@@ -74,18 +74,6 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
-	/**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
-	min-height: 100%;
-	/**
-    Унифицированный интерлиньяж
-   */
-	line-height: 1.5;
-}
-
 :root {
 	--color-dark: #000000;
 	--color-dark-brown: #1f1f1f;
@@ -119,6 +107,9 @@ body {
 	line-height: 1.75;
 	color: var(--color-light-gray);
 	background-color: var(--color-light-brown);
+	min-height: 100%;
+	line-height: 1.5;
+	padding: 2%;
 }
 
 svg *[fill] {
@@ -206,16 +197,31 @@ header {
 
 .logo {
 	font-weight: bold;
-	font-size: 1.2rem;
-	padding: 30px 50px;
+	font-size: 14px;
+	line-height: 15px;
 	color: #333;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 5px;
+}
+
+.centerText {
+	display: flex;
+	justify-content: center;
+}
+
+.logoImg {
+	display: flex;
+	flex-wrap: nowrap;
+	height: 27px;
 }
 
 main {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	padding: 0px 50px;
+	/* padding: 0px 50px; */
 	gap: 30px;
 	flex-wrap: wrap;
 }
@@ -225,7 +231,8 @@ main {
 }
 
 .text-block h1 {
-	font-size: 48px;
+	font-weight: 500;
+	font-size: 36px;
 	line-height: 1.2;
 	color: #222;
 }
@@ -241,15 +248,63 @@ main {
 	display: flex;
 	gap: 20px;
 	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 button {
+	width: 335px;
+	height: 47px;
 	font-size: 16px;
 	padding: 12px 20px;
 	border-radius: 30px;
 	border: none;
 	cursor: pointer;
 	transition: all 0.3s ease;
+}
+
+.marquee {
+	display: flex;
+	overflow-x: hidden;
+	background-color: #f54932;
+	height: 60px;
+}
+
+.buyText {
+	font-size: 16px;
+	font-size: sans-serif;
+	line-height: 1.3;
+	padding: 24px 0;
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.buyText1 {
+	animation: marquee1 20s infinite linear;
+	animation-delay: -20s;
+}
+
+.buyText2 {
+	animation: marquee2 20s infinite linear;
+	animation-delay: -10s;
+}
+
+@keyframes marquee1 {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes marquee2 {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-200%);
+	}
 }
 
 .primary {
@@ -274,17 +329,28 @@ button {
 
 .city-block {
 	position: relative;
-	height: 700px;
+	height: 600px;
 	width: 1623px; /* Фиксированная ширина для десктопа/планшета */
 	overflow: hidden; /* Обрезаем всё, что выходит за границы */
+	@media (max-width: 375px) {
+		height: 900px;
+	}
 }
 
+.buyText {
+	font-size: 18px;
+}
 .city-block .city {
-	width: 100%;
+	width: 85%;
 	top: 20%;
 	position: absolute;
 	z-index: 1;
-	right: 25%;
+
+	@media (max-width: 375px) {
+		top: 500px;
+		width: 60%;
+		right: 68%;
+	}
 }
 
 .city-block .sun {

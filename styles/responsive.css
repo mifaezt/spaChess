@@ -1,0 +1,151 @@
+/* Планшеты */
+@media (max-width: 1024px) {
+  .city-block {
+    height: 500px;
+  }
+
+  .text-block {
+    max-width: 100%;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 300px;
+  }
+
+  .chess-piece {
+    transform: scale(0.9);
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  body {
+    padding: 4%;
+  }
+
+  .city-block {
+    height: 400px;
+  }
+
+  .text-block h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .marquee {
+    height: 50px;
+  }
+
+  .buy-text {
+    font-size: 14px;
+    padding: 18px 0;
+  }
+
+  /* Адаптация позиций фигур */
+  .queen {
+    bottom: 35%;
+    right: 35%;
+    width: 12%;
+  }
+
+  .king {
+    bottom: 55%;
+    right: 15%;
+    width: 13%;
+  }
+
+  .knight {
+    bottom: 30%;
+    right: 45%;
+    width: 13%;
+  }
+
+  .pawn {
+    bottom: 30%;
+    right: 15%;
+    width: 13%;
+  }
+
+  .city-block .sun {
+    right: 30%;
+    width: 50%;
+  }
+
+  .support-text h2 {
+    font-size: 24px;
+  }
+
+  .steps h2 {
+    font-size: 24px;
+  }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+  .city-block {
+    height: 300px;
+  }
+
+  .container {
+    height: 812px;
+  }
+
+  .text-block h1 {
+    font-size: 24px;
+  }
+
+  .logo {
+    /* flex-direction: column;
+    text-align: center; */
+    /* gap: 10px; */
+  }
+
+  .marquee {
+    height: 40px;
+  }
+
+  .buy-text {
+    font-size: 12px;
+    padding: 15px 0;
+  }
+
+  /* Дальнейшая адаптация фигур */
+  .chess-piece {
+    transform: scale(0.7);
+  }
+
+  .queen {
+    bottom: 30%;
+    right: 30%;
+  }
+
+  .king {
+    bottom: 45%;
+    right: 10%;
+  }
+
+  .knight {
+    bottom: 25%;
+    right: 40%;
+  }
+
+  .pawn {
+    bottom: 25%;
+    right: 10%;
+  }
+}

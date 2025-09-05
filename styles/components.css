@@ -6,6 +6,7 @@
   color: #333;
   display: flex;
   flex-wrap: nowrap;
+  flex-direction: row;
   align-items: center;
   gap: 5px;
 }
@@ -22,6 +23,10 @@
   position: relative;
 }
 
+.text-block-first {
+  text-align: left;
+}
+
 .text-block h1 {
   font-weight: 500;
   font-size: 36px;
@@ -31,13 +36,15 @@
 }
 
 .text-block p {
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
+  line-height: 130%;
 }
 
 /* Кнопки */
 .buttons {
   margin-top: 30px;
+
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -63,9 +70,9 @@
 }
 
 .btn-secondary {
-  background-color: transparent;
-  border: 2px solid #000;
-  color: #000;
+  background-color: #ffffffe1;
+
+  color: #000000;
 }
 
 .btn-secondary:hover {
@@ -77,21 +84,24 @@
 .marquee {
   position: absolute;
   display: flex;
+  align-items: center;
   overflow-x: hidden;
   background-color: #f54932;
-  height: 60px;
+  height: 38px;
   width: 100%;
   left: 0;
+  bottom: 0;
 }
 
 .buy-text {
   font-size: 16px;
   font-family: var(--font-family-accent);
   line-height: 1.3;
-  padding: 24px 0;
+  /* padding: 24px 0; */
   white-space: nowrap;
   display: inline-block;
   color: white;
+  font-family: Merriweather sans-serif;
 }
 
 .buy-text1 {
@@ -127,12 +137,12 @@
   position: relative;
   height: 600px;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .city-block .city {
-  width: 85%;
-  top: 20%;
+  /* width: 100%; */
+  bottom: 0;
   position: absolute;
   z-index: 1;
 }
@@ -141,7 +151,7 @@
   position: absolute;
   bottom: 1%;
   right: 36%;
-  width: 40.7%;
+  /* width: 40.7%; */
   z-index: -1;
 }
 

@@ -19,7 +19,7 @@
 
 /* Текстовый блок */
 .text-block {
-  max-width: 600px;
+  max-width: 542px;
   position: relative;
 }
 
@@ -28,8 +28,8 @@
 }
 
 .text-block h1 {
-  font-weight: 500;
-  font-size: 36px;
+  font-weight: 400;
+  font-size: 60px;
   line-height: 1.2;
   color: #222;
   margin-bottom: 20px;
@@ -44,7 +44,6 @@
 /* Кнопки */
 .buttons {
   margin-top: 30px;
-
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -69,12 +68,15 @@
   color: white;
 }
 
-.btn-secondary {
-  background-color: #ffffffe1;
-
-  color: #000000;
+.btn-primary:hover {
+  background-color: #fbce51;
+  color: rgb(0, 0, 0);
 }
 
+.btn-secondary {
+  background-color: #ffffffe1;
+  color: #000000;
+}
 .btn-secondary:hover {
   background-color: #000;
   color: white;
@@ -97,18 +99,16 @@
   font-size: 16px;
   font-family: var(--font-family-accent);
   line-height: 1.3;
-  /* padding: 24px 0; */
   white-space: nowrap;
   display: inline-block;
   color: white;
-  font-family: Merriweather sans-serif;
+  font-family: Merriweather, sans-serif;
 }
 
 .buy-text1 {
   animation: marquee1 20s infinite linear;
   animation-delay: -20s;
 }
-
 .buy-text2 {
   animation: marquee2 20s infinite linear;
   animation-delay: -10s;
@@ -122,7 +122,6 @@
     transform: translateX(-100%);
   }
 }
-
 @keyframes marquee2 {
   0% {
     transform: translateX(0%);
@@ -132,59 +131,78 @@
   }
 }
 
-/* Блок с городом и фигурами */
-.city-block {
+/* === Витрина города с фиксированной шириной 1920 и обрезанием по краям === */
+
+/* Внешний контейнер-видоискатель. Растягивается на ширину вьюпорта и режет края. */
+.container-main-img {
   position: relative;
-  height: 600px;
   width: 100%;
-  /* overflow: hidden; */
+  max-width: 1920px; /* максимум 1920 */
+  margin: 0 auto; /* центрирование на больших экранах */
+  /* overflow: auto; */
+  z-index: -1;
 }
 
-.city-block .city {
+/* Внутренняя «сцена» фиксированной ширины, центрируется даже когда шире вьюпорта */
+.city-canvas {
+  position: relative;
+  width: 1920px; /* фиксированная сцена */
+  /* max-width: 100%; */
+  margin: 0 auto;
+}
+/* Город задаёт высоту сцены. Он не позиционируется абсолютно — так контейнер
+   берёт его реальную высоту и фигуры привязываются к этим размерам */
+.city {
   /* width: 100%; */
-  bottom: 0;
-  position: absolute;
+  height: auto;
+  display: block;
+  position: relative;
+  /* right: 23%; */
   z-index: 1;
 }
 
-.city-block .sun {
+/* Слои */
+/* Солнце */
+.sun {
   position: absolute;
-  bottom: 1%;
-  right: 36%;
-  /* width: 40.7%; */
-  z-index: -1;
+  z-index: 0;
+  /* width: 36%;
+  left: 56%;
+  bottom: 26%; */
+  height: auto;
 }
 
+/* Фигуры */
 .chess-piece {
   position: absolute;
-  z-index: 2;
-  transform: scale(1);
+  height: auto;
 }
 
 .queen {
-  bottom: 43%;
-  right: 40%;
-  width: 8.2%;
-  z-index: -1;
+  z-index: 0;
+  /* width: 6.8%;
+  left: 58%;
+  bottom: 33%; */
 }
 
 .king {
-  bottom: 65%;
-  right: 18%;
-  width: 9%;
-  z-index: -1;
+  z-index: 0;
+  /* width: 7.4%;
+  left: 70%;
+  bottom: 40%; */
 }
 
 .knight {
-  bottom: 35%;
-  right: 48%;
-  width: 9%;
+  z-index: 2;
+  /* width: 14%;
+  left: 49%;
+  bottom: -2%; */
 }
 
 .pawn {
-  bottom: 35%;
-  right: 18%;
-  width: 9%;
+  z-index: 2;
+  /* width: 5.6%;
+  bottom: 3%; */
 }
 
 /* Секция поддержки */
@@ -192,14 +210,23 @@
   padding: 60px 0;
 }
 
-.support-text h2 {
-  font-family: var(--font-family-accent);
-  font-size: 28px;
-  margin-bottom: 20px;
+.support-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.support-text p {
-  margin-bottom: 15px;
+.support-text h2 {
+  font-family: var(--font-family-base);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 135%;
+  /* margin-bottom: 20px; */
+}
+
+.chessgame {
+  width: 394px;
+  height: 250px;
 }
 
 .highlight {
@@ -207,32 +234,71 @@
   font-weight: bold;
 }
 
-.support-details ul {
-  list-style: none;
-  padding: 0;
+.image-champion {
+  flex: 1 1 300px;
+  min-width: 280px;
 }
 
-.support-details li {
+.image-champion img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.text-block-champion {
+  flex: 2 1 400px;
+  min-width: 280px;
+}
+
+.text-block-champion h2 {
+  color: #f54932;
+  font-family: var(--font-family-base);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 135%;
   margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
   font-family: var(--font-family-accent);
+  font-weight: 20px;
+}
+
+td {
+  font-weight: bold;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+td:first-child {
+  font-weight: normal;
+
+  width: 40%;
+  border-right: 1px solid #ddd;
+}
+
+.note {
+  font-family: var(--font-family-accent);
+  color: #3057a2;
+  font-size: 20px;
 }
 
 /* Этапы */
 .steps {
   padding: 60px 0;
 }
-
 .steps h2 {
   font-family: var(--font-family-accent);
   font-size: 28px;
   margin-bottom: 10px;
 }
-
 .subtitle {
   font-style: italic;
   margin-bottom: 30px;
 }
-
 .step {
   padding: 20px;
   background: white;
@@ -245,19 +311,16 @@
 .participants {
   padding: 60px 0;
 }
-
 .section-title {
   font-family: var(--font-family-accent);
   font-size: 28px;
   margin-bottom: 30px;
 }
-
 .carousel-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
-
 .carousel {
   display: flex;
   overflow-x: auto;
@@ -265,20 +328,17 @@
   gap: 20px;
   padding: 20px 0;
 }
-
 .participant-item {
   scroll-snap-align: start;
   min-width: 250px;
   text-align: center;
 }
-
 .participant-item img {
   width: 100%;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
 }
-
 .carousel-btn {
   background: var(--color-dark);
   color: white;

@@ -1,40 +1,249 @@
 /* Планшеты */
-@media (max-width: 1024px) {
-  .city-block {
-    height: 500px;
+@media (max-width: 1920px) {
+  .container-background {
+    object-fit: cover;
+    height: 700px;
   }
 
-  .text-block {
-    max-width: 100%;
+  .text-block h1 {
+    font-size: 60px;
+  }
+
+  .container-title {
+    padding: 20px 10%;
   }
 
   main {
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+  }
+
+  .buttons {
+    flex-wrap: nowrap;
   }
 
   .btn {
-    width: 300px;
+    width: 263px;
+    height: 72px;
+    border-radius: 50px;
   }
 
-  .chess-piece {
-    transform: scale(0.9);
+  .btn-secondary {
+    border: #000000 1px solid;
+    background-color: transparent;
+    color: #000000;
+  }
+
+  .city {
+    width: 1623px;
+    right: 10%;
+    bottom: 335px;
+  }
+
+  .sun {
+    bottom: 10px;
+    /* left: 100px; */
+    width: 660px;
+    bottom: 410px;
+    right: 33%;
+  }
+
+  .queen {
+    width: 120px; /* 65 * 1.36 */
+    bottom: 540px;
+    left: 670px; /* 65 * 1.36 */
+  }
+
+  .king {
+    width: 120px; /* 65 * 1.36 */
+    bottom: 670px;
+    left: 1010px; /* 65 * 1.36 */
+  }
+
+  .knight {
+    width: 200px; /* 100 * 1.36 */
+    bottom: 310px;
+    left: 840.8px; /* 155 * 1.36 */
+  }
+
+  .marquee {
+    height: 38px;
+  }
+
+  .pawn {
+    width: 82px; /* 100 * 1.36 */
+    bottom: 375px;
+    left: 1180px; /* 155 * 1.36 */
+  }
+}
+
+/* Планшеты */
+@media (max-width: 1366px) {
+  .container-background {
+    object-fit: cover;
+    height: 700px;
+  }
+
+  .text-block h1 {
+    font-size: 60px;
+  }
+
+  .container-title {
+    padding: 20px 60px;
+  }
+
+  main {
+    flex-direction: column;
+    /* align-items: center; */
+  }
+
+  .buttons {
+    flex-wrap: nowrap;
+  }
+
+  .btn {
+    width: 263px;
+    height: 72px;
+    border-radius: 50px;
+  }
+
+  .btn-secondary {
+    border: #000000 1px solid;
+    background-color: transparent;
+    color: #000000;
+  }
+
+  .city {
+    width: 1623px;
+    right: 10%;
+    bottom: 335px;
+  }
+
+  .sun {
+    bottom: 10px;
+    /* left: 100px; */
+    width: 660px;
+    bottom: 410px;
+    right: 33%;
+  }
+
+  .queen {
+    width: 120px; /* 65 * 1.36 */
+    bottom: 540px;
+    left: 670px; /* 65 * 1.36 */
+  }
+
+  .king {
+    width: 120px; /* 65 * 1.36 */
+    bottom: 670px;
+    left: 1010px; /* 65 * 1.36 */
+  }
+
+  .knight {
+    width: 200px; /* 100 * 1.36 */
+    bottom: 310px;
+    left: 840.8px; /* 155 * 1.36 */
+  }
+
+  .marquee {
+    height: 38px;
+  }
+
+  .pawn {
+    width: 82px; /* 100 * 1.36 */
+    bottom: 375px;
+    left: 1180px; /* 155 * 1.36 */
+  }
+}
+
+/* Планшеты */
+@media (max-width: 1024px) {
+  .text-block h1 {
+    font-size: 50px;
+  }
+
+  .container-title {
+    padding: 20px 60px;
+  }
+
+  main {
+    flex-direction: column;
+    /* align-items: center; */
+  }
+
+  .buttons {
+    flex-wrap: nowrap;
+  }
+
+  .btn {
+    width: 263px;
+    height: 72px;
+    border-radius: 50px;
+  }
+
+  .btn-secondary {
+    border: #000000 1px solid;
+    background-color: transparent;
+    color: #000000;
+  }
+
+  .city {
+    /* width: 1200px; */
+    right: 48%;
+    bottom: 20px;
+  }
+
+  .sun {
+    right: 0;
+    bottom: 10px;
+    left: 100px;
+    width: 560px;
+  }
+
+  .queen {
+    width: 89px; /* 65 * 1.36 */
+    top: 70px; /* 40 * 1.36 */
+    left: 130px; /* 65 * 1.36 */
+  }
+
+  .king {
+    width: 88px; /* 65 * 1.36 */
+    top: -20px; /* -5 * 1.36 */
+    left: 490px; /* 230 * 1.36 */
+  }
+
+  .knight {
+    width: 166px; /* 100 * 1.36 */
+    top: 300px; /* 165 * 1.36 */
+    left: 350.8px; /* 155 * 1.36 */
+  }
+
+  .marquee {
+    height: 38px;
+  }
+
+  .pawn {
+    width: 70px; /* 100 * 1.36 */
+    top: 350px; /* 165 * 1.36 */
+    left: 650px;
   }
 }
 
 /* Мобильные устройства */
 @media (max-width: 768px) {
-  body {
-    /* padding: 4%; */
-  }
-
-  .city-block {
-    height: 400px;
+  .container-title {
+    padding: 3%;
   }
 
   .text-block h1 {
     font-size: 36px;
-    /* text-align: center; */
+    width: 444px;
+  }
+
+  .city {
+    width: 1200px;
+    right: 21%;
+    bottom: 20px;
   }
 
   .buttons {
@@ -44,120 +253,125 @@
 
   .btn {
     width: 100%;
-    /* max-width: 300px; */
   }
 
-  .marquee {
-    height: 50px;
+  .sun {
+    right: 0;
+    bottom: 70px;
+    left: 220px;
+    width: 460px;
   }
 
-  .buy-text {
-    font-size: 14px;
-    /* padding: 18px 0; */
-  }
-
-  /* Адаптация позиций фигур */
   .queen {
-    bottom: 35%;
-    right: 35%;
-    width: 12%;
+    width: 89px; /* 65 * 1.36 */
+    top: 1px; /* 40 * 1.36 */
+    left: 230px; /* 65 * 1.36 */
   }
 
   .king {
-    bottom: 55%;
-    right: 15%;
-    width: 13%;
+    width: 88px; /* 65 * 1.36 */
+    top: -70px; /* -5 * 1.36 */
+    left: 490px; /* 230 * 1.36 */
   }
 
   .knight {
-    bottom: 30%;
-    right: 45%;
-    width: 13%;
-  }
-
-  .pawn {
-    bottom: 30%;
-    right: 15%;
-    width: 13%;
-  }
-
-  .city-block .sun {
-    right: 30%;
-    width: 50%;
-  }
-
-  .support-text h2 {
-    font-size: 24px;
-  }
-
-  .steps h2 {
-    font-size: 24px;
-  }
-}
-
-/* Маленькие мобильные */
-@media (max-width: 480px) {
-  .city-block {
-    height: 300px;
-  }
-
-  .city-block .city {
-    width: 875px;
-    right: -90px;
-    bottom: 0;
-  }
-
-  .city-block .sun {
-    width: 297px;
-    top: -90px;
-    right: 55px;
-  }
-
-  .container {
-    height: 812px;
-  }
-
-  .text-block h1 {
-    font-size: 36px;
-  }
-
-  .logo {
-    /* flex-direction: column;
-    text-align: center; */
-    /* gap: 10px; */
+    width: 136px; /* 100 * 1.36 */
+    top: 150px; /* 165 * 1.36 */
+    left: 350.8px; /* 155 * 1.36 */
   }
 
   .marquee {
     height: 38px;
   }
 
-  .buy-text {
-    font-size: 16px;
-    /* padding: 15px 0; */
+  /* Поддержка */
+
+  .table-container {
+    flex-direction: column;
   }
 
-  /* Дальнейшая адаптация фигур */
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  td {
+    border: none;
+    padding: 6px 0;
+  }
+
+  td:first-child {
+    /* font-weight: bold; */
+    border-right: none;
+    margin-top: 10px;
+  }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+  .container-background {
+    height: 812px;
+  }
+
+  .container-title {
+    padding: 5%;
+  }
+
+  /* .container-main-img {
+    overflow: initial;
+  } */
+
+  .buy-text {
+    font-size: 16px;
+  }
+  /* по желанию можно скрыть пешку на совсем маленьких устройствах */
+  .pawn {
+    display: none;
+  }
+
+  .city {
+    width: 886px;
+    right: 21%;
+    bottom: -35px;
+  }
+
+  .sun {
+    right: 0;
+    bottom: 60px;
+    left: 40px;
+    width: 297px;
+  }
+
+  /* Фигуры */
   .chess-piece {
-    transform: scale(0.7);
+    width: 10%;
+    right: 0;
+    top: 0;
+    left: 0;
   }
 
   .queen {
-    bottom: 30%;
-    right: 30%;
+    width: 65px;
+    top: 40px;
+    left: 65px;
   }
 
   .king {
-    bottom: 45%;
-    right: 10%;
+    width: 65px;
+    top: -5px;
+    left: 230px;
   }
 
   .knight {
-    width: 160px;
-    bottom: 0;
-    right: 40%;
+    width: 100px;
+    top: 165px;
+    left: 155px;
   }
 
-  .pawn {
-    display: none;
+  .marquee {
+    height: 38px;
   }
 }

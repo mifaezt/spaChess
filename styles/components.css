@@ -3,7 +3,7 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 15px;
-  color: #333;
+  color: var(--color-dark-brown);
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -31,13 +31,13 @@
   font-weight: 400;
   font-size: 60px;
   line-height: 1.2;
-  color: #222;
+  color: var(--color-dark-brown);
   margin-bottom: 20px;
 }
 
 .text-block p {
   font-size: 18px;
-  color: #333;
+  color: var(--color-dark-brown);
   line-height: 130%;
 }
 
@@ -56,30 +56,30 @@
   height: 47px;
   font-size: 16px;
   padding: 12px 20px;
-  border-radius: 30px;
+  border-radius: var(--border-radius);
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) ease;
   font-family: var(--font-family-accent);
 }
 
 .btn-primary {
-  background-color: #000;
-  color: white;
+  background-color: var(--color-dark);
+  color: var(--color-white);
 }
 
 .btn-primary:hover {
-  background-color: #fbce51;
-  color: rgb(0, 0, 0);
+  background-color: var(--color-yellow);
+  color: var(--color-dark);
 }
 
 .btn-secondary {
-  background-color: #ffffffe1;
-  color: #000000;
+  background-color: rgba(255, 255, 255, 0.88);
+  color: var(--color-dark);
 }
 .btn-secondary:hover {
-  background-color: #000;
-  color: white;
+  background-color: var(--color-dark);
+  color: var(--color-white);
 }
 
 /* Бегущая строка */
@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   overflow-x: hidden;
-  background-color: #f54932;
+  background-color: var(--color-red);
   height: 38px;
   width: 100%;
   left: 0;
@@ -97,12 +97,11 @@
 
 .buy-text {
   font-size: 16px;
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-base);
   line-height: 1.3;
   white-space: nowrap;
   display: inline-block;
-  color: white;
-  font-family: Merriweather, sans-serif;
+  color: var(--color-white);
 }
 
 .buy-text1 {
@@ -131,33 +130,23 @@
   }
 }
 
-/* === Витрина города с фиксированной шириной 1920 и обрезанием по краям === */
-
-/* Внешний контейнер-видоискатель. Растягивается на ширину вьюпорта и режет края. */
 .container-main-img {
   position: relative;
   width: 100%;
-  max-width: 1920px; /* максимум 1920 */
-  margin: 0 auto; /* центрирование на больших экранах */
-  /* overflow: auto; */
+  max-width: 1920px;
+  margin: 0 auto;
   z-index: -1;
 }
 
-/* Внутренняя «сцена» фиксированной ширины, центрируется даже когда шире вьюпорта */
 .city-canvas {
   position: relative;
-  width: 1920px; /* фиксированная сцена */
-  /* max-width: 100%; */
+  width: 1920px;
   margin: 0 auto;
 }
-/* Город задаёт высоту сцены. Он не позиционируется абсолютно — так контейнер
-   берёт его реальную высоту и фигуры привязываются к этим размерам */
 .city {
-  /* width: 100%; */
   height: auto;
   display: block;
   position: relative;
-  /* right: 23%; */
   z-index: 1;
 }
 
@@ -180,29 +169,18 @@
 
 .queen {
   z-index: 0;
-  /* width: 6.8%;
-  left: 58%;
-  bottom: 33%; */
 }
 
 .king {
   z-index: 0;
-  /* width: 7.4%;
-  left: 70%;
-  bottom: 40%; */
 }
 
 .knight {
   z-index: 2;
-  /* width: 14%;
-  left: 49%;
-  bottom: -2%; */
 }
 
 .pawn {
   z-index: 2;
-  /* width: 5.6%;
-  bottom: 3%; */
 }
 
 /* Секция поддержки */
@@ -251,7 +229,7 @@
 }
 
 .text-block-champion h2 {
-  color: #f54932;
+  color: var(--color-red);
   font-family: var(--font-family-base);
   font-size: 36px;
   font-weight: 400;
@@ -270,19 +248,18 @@ table {
 td {
   font-weight: bold;
   padding: 8px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-gray);
 }
 
 td:first-child {
   font-weight: normal;
-
   width: 40%;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid var(--color-gray);
 }
 
 .note {
   font-family: var(--font-family-accent);
-  color: #3057a2;
+  color: var(--color-blue);
   font-size: 20px;
 }
 
@@ -299,10 +276,11 @@ td:first-child {
   font-style: italic;
   margin-bottom: 30px;
 }
+
 .step {
   padding: 20px;
-  background: white;
-  border-radius: 10px;
+  background: var(--color-white);
+  /* border-radius: 10px; */
   margin-bottom: 15px;
   font-family: var(--font-family-accent);
 }
@@ -320,28 +298,63 @@ td:first-child {
   position: relative;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  width: 100%;
 }
 .carousel {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
   gap: 20px;
   padding: 20px 0;
+  transition: transform 0.4s ease;
+  will-change: transform;
 }
 .participant-item {
   scroll-snap-align: start;
-  min-width: 250px;
+  min-width: 394px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 250px;
+  margin-right: 16px;
   text-align: center;
 }
 .participant-item img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
+  width: 320px;
+  height: 320px;
   border-radius: 10px;
+  padding-bottom: 15px;
 }
+
+.participant-item p {
+  margin: 0;
+}
+
+.participant-item button {
+  margin-top: 10px;
+  background-color: transparent;
+  border-radius: 15px;
+  border: 1px solid var(--color-blue);
+  padding: 3px 10px;
+  color: var(--color-blue);
+}
+
+.participant-item button:hover {
+  border: 1px solid var(--color-dark);
+  color: var(--color-dark);
+}
+
+.participant-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .carousel-btn {
   background: var(--color-dark);
-  color: white;
+  color: var(--color-white);
   border: none;
   width: 40px;
   height: 40px;
@@ -351,10 +364,84 @@ td:first-child {
   z-index: 10;
 }
 
+.subtitle {
+  color: var(--color-blue);
+}
+
+.about-title {
+  font-family: var(--font-family-base);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 135%;
+}
+
+/* about */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.step {
+  background-image: url("/img/Paper.png");
+  padding: 16px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.num {
+  display: inline-block;
+  background: var(--color-white);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.withplane {
+  position: relative;
+}
+
+/* Особые размеры */
+.step3 {
+  grid-row: span 2;
+}
+
+.step7 {
+  grid-column: span 2;
+}
+
+.step7container {
+  width: 60%;
+}
+
+.plane {
+  grid-column: span 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.planeimg {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 20px;
+  /* left: 200px; */
+  right: -10px;
+  object-fit: cover;
+}
+
 /* Футер */
 footer {
   text-align: center;
   padding: 30px 0;
   font-style: italic;
   color: var(--color-dark-brown);
+}
+
+.footer-merquee {
+  position: relative;
 }

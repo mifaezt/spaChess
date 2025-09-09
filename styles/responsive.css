@@ -229,10 +229,23 @@
   }
 }
 
+@media (min-width: 769px) {
+  .about-slider {
+    display: none; /* прячем слайдер */
+  }
+}
+
 /* Мобильные устройства */
 @media (max-width: 768px) {
   .container-title {
     padding: 3%;
+  }
+
+  .about-grid {
+    display: none; /* прячем сетку */
+  }
+  .about-slider {
+    display: block;
   }
 
   .text-block h1 {
@@ -308,8 +321,14 @@
     border-right: none;
     margin-top: 10px;
   }
-}
 
+  .about-grid {
+    display: none; /* прячем сетку */
+  }
+  .about-slider {
+    display: flex;
+  }
+}
 /* Маленькие мобильные */
 @media (max-width: 480px) {
   .container-background {
